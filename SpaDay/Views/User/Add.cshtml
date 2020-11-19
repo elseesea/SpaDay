@@ -9,7 +9,7 @@
     <p>@Model.Error</p>
 }
 
-<form method="post" action="/user">
+<form asp-controller="User" method="post" asp-action="Add">
     <div class="form-group">
         <label asp-for="UserName">Username</label>
         <input asp-for="UserName" />
