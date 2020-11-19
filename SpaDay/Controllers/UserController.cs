@@ -18,13 +18,14 @@ namespace SpaDay.Controllers
             return View();
         }
 
-        public IActionResult Add(AddUserViewModel addUserViewModel)
+        public IActionResult Add()
         {
+            AddUserViewModel addUserViewModel = new AddUserViewModel();
             return View(addUserViewModel);
         }
 
         [HttpPost]
-        [Route("/user")]
+        [Route("/user/add")]
         public IActionResult SubmitAddUserForm(AddUserViewModel addUserViewModel)
         {
             if (ModelState.IsValid)
