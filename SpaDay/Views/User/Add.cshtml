@@ -1,34 +1,35 @@
 ﻿@{
 }
+@model SpaDay.ViewModels.AddUserViewModel;
 
 <h1>Sign Up Form</h1>
 
-@if (ViewBag.error != null)
+@if (Model.Error != null)
 {
-    <p>@ViewBag.error</p>
+    <p>@Model.Error</p>
 }
 
 <form method="post" action="/user">
     Username:
     <br>
-    @if (ViewBag.error == null)
+    @if (Model.Error == null)
     {
         <input type="text" name="username" />
     }
     else
     {
-        <input type="text" name="username" value="@ViewBag.userName" />
+        <input type="text" name="username" value="@Model.UserName" />
     }
     <br>
     Email:
     <br>
-    @if (ViewBag.error == null)
+    @if (Model.Error == null)
     {
         <input type="email" name="email" />
     }
     else
     {
-        <input type="email" name="email" value="@ViewBag.eMail" />
+        <input type="email" name="email" value="@Model.Email" />
     }
     <br>
     Password:
