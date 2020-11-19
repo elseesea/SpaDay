@@ -30,20 +30,13 @@ namespace SpaDay.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (addUserViewModel.Password.Equals(addUserViewModel.VerifyPassword))
+                User user = new User()
                 {
-                    User user = new User()
-                    {
-                        Username = addUserViewModel.UserName,
-                        Email = addUserViewModel.Email,
-                        Password = addUserViewModel.Password
-                    };
-                    return View("Index", user);
-                }
-                else
-                {
-                    addUserViewModel.Error = "Passwords do not match! Try again!";
-                }
+                    Username = addUserViewModel.UserName,
+                    Email = addUserViewModel.Email,
+                    Password = addUserViewModel.Password
+                };
+                return View("Index", user);
             }
             return View("Add", addUserViewModel);
         }

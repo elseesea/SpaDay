@@ -14,6 +14,7 @@ namespace SpaDay.ViewModels
 
         [Required(ErrorMessage = "Password required")]
         [StringLength(20, MinimumLength = 6, ErrorMessage = "Password must be between 6 and 20 characters.")]
+        [Compare("VerifyPassword", ErrorMessage = "Password does not match Confirm password.")]
         public string Password { get; set; }
 
         [EmailAddress(ErrorMessage = "Invalid email address")]
