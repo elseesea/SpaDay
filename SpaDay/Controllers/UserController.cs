@@ -41,12 +41,10 @@ namespace SpaDay.Controllers
                 }
                 else
                 {
-                    ViewBag.error = "Passwords do not match! Try again!";
-                    ViewBag.userName = newUser.Username;
-                    ViewBag.eMail = newUser.Email;
-                    return View("Add");
+                    addUserViewModel.Error = "Passwords do not match! Try again!";
                 }
             }
+            return View("Add", addUserViewModel);
         }
 
     }
